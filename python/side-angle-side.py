@@ -1,4 +1,3 @@
-import turtle #don't forget to import also turtle.Screen()
 from math import pi, sin, cos, sqrt
 from numpy import arcsin
 
@@ -20,22 +19,23 @@ def main():
     a = sqrt((b * sin(alpha))**2 + (c - b * cos(alpha))**2)
     # use sinus theorem
     sinusBeta = b / a * sin(alpha)
-    if (a**2 + c**2 <= b**2):
+    if (a**2 + c**2 >= b**2):
         # angle beta is sharp
         beta = arcsin(sinusBeta)
     else:
         beta = pi - arcsin(sinusBeta)
     gamma = pi - alpha - beta
 
-    #turtle drawing
-
+    
     #finally output
     print(" ")
     print("The description of the triangle:")
     something = "something"
-    print(format("""Last side lenght is " + something )
-    print("Angle between your first side and our 'new side' is " + something + "°")
-    print("Angle between your second side and our 'new side' is " + something + "°")
-    print(" ")
-    print("You can also look at this basic graph... :)")
+    print("a = {:.0f} mm".format(a))
+    print("b = {:.0f} mm".format(b))
+    print("c = {:.0f} mm".format(c))
+    print("Angle alpha = {:.1f} °".format(alpha / pi * 180))
+    print("Angle beta  = {:.1f} °".format(beta  / pi * 180))
+    print("Angle gamma = {:.1f} °".format(gamma / pi * 180))
+    
 main()
